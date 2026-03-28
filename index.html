@@ -1248,6 +1248,7 @@
       animation: slideUp 0.3s ease;
       margin: auto;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      z-index: 1001;
     }
 
     .modal-content::-webkit-scrollbar {
@@ -1287,24 +1288,38 @@
       position: absolute;
       top: 1.5rem;
       right: 1.5rem;
-      background: none;
+      background: var(--white);
       border: none;
-      font-size: 1.8rem;
+      font-size: 2rem;
       cursor: pointer;
       color: var(--text-light);
-      transition: color 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       padding: 0;
-      width: 32px;
-      height: 32px;
+      width: 40px;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 6px;
+      border-radius: 50%;
+      z-index: 100;
+      line-height: 1;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .modal-close:hover {
       color: var(--pink);
       background: var(--pink-light);
+      transform: rotate(90deg) scale(1.1);
+      box-shadow: 0 4px 12px rgba(255, 75, 125, 0.3);
+    }
+
+    .modal-close:active {
+      transform: rotate(90deg) scale(0.95);
+    }
+
+    .modal-close:focus {
+      outline: 2px solid var(--pink);
+      outline-offset: 2px;
     }
 
     .modal h2 {
@@ -2406,6 +2421,9 @@
           </button>
           <p class="payment-note">🔒 Secure payment powered by Razorpay</p>
         </div>
+
+        <!-- Fallback Close Button -->
+        <button type="button" class="btn btn-outline btn-full" onclick="closeModal('razorpayModal')" style="margin-top: 1rem;">Cancel & Close</button>
       </form>
     </div>
   </div>
