@@ -1244,7 +1244,27 @@
       position: relative;
       max-height: 90vh;
       overflow-y: auto;
+      overflow-x: hidden;
       animation: slideUp 0.3s ease;
+      margin: auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-content::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .modal-content::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 4px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb:hover {
+      background: var(--text-lighter);
     }
 
     .modal-checkout {
@@ -2274,7 +2294,7 @@
   <!-- Razorpay Modal -->
   <div class="modal" id="razorpayModal">
     <div class="modal-content modal-checkout">
-      <button class="modal-close" onclick="closeModal('razorpayModal')" aria-label="Close modal">×</button>
+      <button class="modal-close" onclick="closeModal('razorpayModal')" aria-label="Close modal" title="Close checkout">×</button>
       
       <!-- Progress Indicator -->
       <div class="checkout-progress">
@@ -2484,11 +2504,15 @@
       carouselContainer.addEventListener('mouseleave', autoPlayCarousel);
     }
     function openModal(modalId) {
-      document.getElementById(modalId).classList.add('show');
+      const modal = document.getElementById(modalId);
+      modal.classList.add('show');
+      // Don't lock body scroll - allows users to scroll background while modal is open
+      // This is especially important for Razorpay modal which may take time
     }
 
     function closeModal(modalId) {
-      document.getElementById(modalId).classList.remove('show');
+      const modal = document.getElementById(modalId);
+      modal.classList.remove('show');
     }
 
     function showToast(message, type = 'success') {
@@ -2866,7 +2890,10 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         document.querySelectorAll('.modal.show').forEach(modal => {
-          closeModal(modal.id);
+          // Don't close if it's Razorpay modal (Razorpay handles its own modal)
+          if (modal.id !== 'razorpayModal') {
+            closeModal(modal.id);
+          }
         });
       }
     });
@@ -2874,8 +2901,12 @@
     // ===== MODAL CLOSE ON BACKGROUND CLICK =====
     document.querySelectorAll('.modal').forEach(modal => {
       modal.addEventListener('click', (e) => {
+        // Only close if clicking on the modal background, not the content
         if (e.target === modal) {
-          closeModal(modal.id);
+          // Don't close if it's Razorpay modal (Razorpay handles its own modal)
+          if (modal.id !== 'razorpayModal') {
+            closeModal(modal.id);
+          }
         }
       });
     });
