@@ -2468,6 +2468,25 @@
       BLINKIT_URL: 'https://blinkit.com'
     };
 
+    // ===== SCROLL RESTORATION & SAFETY =====
+    // Ensure scroll is always enabled on page load
+    window.addEventListener('load', () => {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+      document.body.style.position = '';
+    });
+
+    // Additional safety: enable scroll periodically
+    setInterval(() => {
+      // Only reset if body has overflow hidden (which shouldn't happen)
+      if (document.body.style.overflow === 'hidden' || 
+          document.documentElement.style.overflow === 'hidden') {
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+        document.body.style.position = '';
+      }
+    }, 1000);
+
     // ===== CAROUSEL FUNCTIONALITY =====
     let currentSlide = 0;
     const slides = document.querySelectorAll('.carousel-slide');
@@ -2531,6 +2550,18 @@
     function closeModal(modalId) {
       const modal = document.getElementById(modalId);
       modal.classList.remove('show');
+      
+      // Ensure body scroll is enabled after modal closes
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      
+      // Re-enable scrolling on html element as well
+      document.documentElement.style.overflow = '';
+      
+      // Allow browser reflow
+      setTimeout(() => {
+        window.scrollBy(0, 0);
+      }, 50);
     }
 
     function showToast(message, type = 'success') {
@@ -2671,6 +2702,13 @@
         modal: {
           ondismiss: function() {
             showToast('Payment cancelled', 'warning');
+            // Ensure scroll is re-enabled if Razorpay modal is closed
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.documentElement.style.overflow = '';
+            setTimeout(() => {
+              window.scrollBy(0, 0);
+            }, 50);
           }
         }
       };
