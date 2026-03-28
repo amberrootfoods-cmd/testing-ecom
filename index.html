@@ -21,7 +21,7 @@
       padding: 0;
       box-sizing: border-box;
     }
-
+ 
     :root {
       --pink: #FF4B7D;
       --pink-dark: #E63B6D;
@@ -43,11 +43,11 @@
       --warning: #F59E0B;
       --error: #EF4444;
     }
-
+ 
     html {
       scroll-behavior: smooth;
     }
-
+ 
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--bg);
@@ -55,13 +55,13 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-
+ 
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
-
+ 
     /* Typography */
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Playfair Display', serif;
@@ -70,38 +70,38 @@
       letter-spacing: -0.015em;
       color: var(--dark);
     }
-
+ 
     h1 {
       font-size: clamp(2.2rem, 5vw, 3.5rem);
       margin-bottom: 1.5rem;
     }
-
+ 
     h2 {
       font-size: clamp(1.6rem, 3.5vw, 2.4rem);
       margin-bottom: 1.25rem;
     }
-
+ 
     h3 {
       font-size: 1.3rem;
       margin-bottom: 1rem;
     }
-
+ 
     p {
       font-size: 1rem;
       line-height: 1.8;
       color: var(--text-light);
     }
-
+ 
     a {
       color: var(--pink);
       text-decoration: none;
       transition: color 0.3s ease;
     }
-
+ 
     a:hover {
       color: var(--pink-dark);
     }
-
+ 
     /* Buttons */
     .btn {
       display: inline-flex;
@@ -120,62 +120,62 @@
       white-space: nowrap;
       user-select: none;
     }
-
+ 
     .btn:disabled {
       opacity: 0.5;
       cursor: not-allowed;
     }
-
+ 
     .btn-primary {
       background: linear-gradient(135deg, var(--pink), var(--pink-dark));
       color: white;
       box-shadow: 0 8px 20px rgba(255, 75, 125, 0.25);
     }
-
+ 
     .btn-primary:hover:not(:disabled) {
       transform: translateY(-3px);
       box-shadow: 0 12px 30px rgba(255, 75, 125, 0.35);
     }
-
+ 
     .btn-secondary {
       background: var(--cyan);
       color: white;
       box-shadow: 0 8px 20px rgba(47, 217, 255, 0.25);
     }
-
+ 
     .btn-secondary:hover:not(:disabled) {
       transform: translateY(-3px);
       box-shadow: 0 12px 30px rgba(47, 217, 255, 0.35);
     }
-
+ 
     .btn-tertiary {
       background: var(--purple);
       color: white;
       box-shadow: 0 8px 20px rgba(123, 104, 238, 0.25);
     }
-
+ 
     .btn-tertiary:hover:not(:disabled) {
       transform: translateY(-3px);
       box-shadow: 0 12px 30px rgba(123, 104, 238, 0.35);
     }
-
+ 
     .btn-outline {
       background: transparent;
       color: var(--text);
       border: 2px solid var(--border);
     }
-
+ 
     .btn-outline:hover:not(:disabled) {
       border-color: var(--pink);
       color: var(--pink);
       background: var(--pink-light);
     }
-
+ 
     .btn-small {
       padding: 0.7rem 1.25rem;
       font-size: 0.85rem;
     }
-
+ 
     /* Header */
     header {
       background: var(--white);
@@ -185,7 +185,7 @@
       z-index: 100;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
     }
-
+ 
     .header-inner {
       display: flex;
       align-items: center;
@@ -193,23 +193,46 @@
       padding: 1.25rem 0;
       gap: 2rem;
     }
-
-   .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  color: var(--dark);
-  font-weight: 800;
-  font-size: 1.4rem;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
-}
-
+ 
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 800;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+ 
+    .logo-main {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+ 
+    .logo-badge {
+      background: linear-gradient(135deg, #FF4B7D, #7B68EE);
+      color: white;
+      font-size: 0.6rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 10px;
+      font-weight: 700;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(255, 75, 125, 0.35);
+      letter-spacing: 0.3px;
+      position: static;
+      transform: none;
+    }
+ 
     .logo:hover {
       transform: scale(1.02);
     }
-
+ 
     .logo-icon {
       width: 44px;
       height: 44px;
@@ -220,14 +243,14 @@
       justify-content: center;
       font-size: 1.4rem;
     }
-
+ 
     nav {
       display: flex;
       gap: 2rem;
       align-items: center;
       flex: 1;
     }
-
+ 
     nav a {
       color: var(--text);
       font-weight: 500;
@@ -235,7 +258,7 @@
       position: relative;
       transition: color 0.3s ease;
     }
-
+ 
     nav a::after {
       content: '';
       position: absolute;
@@ -246,22 +269,22 @@
       background: var(--pink);
       transition: width 0.3s ease;
     }
-
+ 
     nav a:hover {
       color: var(--pink);
     }
-
+ 
     nav a:hover::after {
       width: 100%;
     }
-
+ 
     .header-actions {
       display: flex;
       gap: 1rem;
       align-items: center;
       flex-shrink: 0;
     }
-
+ 
     .search-box {
       display: flex;
       align-items: center;
@@ -273,12 +296,12 @@
       flex: 0 1 280px;
       transition: all 0.3s ease;
     }
-
+ 
     .search-box:focus-within {
       border-color: var(--pink);
       box-shadow: 0 0 0 3px rgba(255, 75, 125, 0.1);
     }
-
+ 
     .search-box input {
       flex: 1;
       background: none;
@@ -288,11 +311,11 @@
       font-size: 0.9rem;
       color: var(--text);
     }
-
+ 
     .search-box input::placeholder {
       color: var(--text-lighter);
     }
-
+ 
     .menu-toggle {
       display: none;
       background: none;
@@ -303,30 +326,30 @@
       border-radius: 6px;
       transition: background 0.3s ease;
     }
-
+ 
     .menu-toggle:hover {
       background: var(--bg);
     }
-
+ 
     @media (max-width: 1024px) {
       .search-box {
         flex: 0 1 200px;
       }
-
+ 
       nav {
         gap: 1.5rem;
       }
     }
-
+ 
     @media (max-width: 768px) {
       .header-inner {
         gap: 1rem;
       }
-
+ 
       .search-box {
         display: none;
       }
-
+ 
       nav {
         display: none;
         position: absolute;
@@ -341,29 +364,29 @@
         max-height: calc(100vh - 80px);
         overflow-y: auto;
       }
-
+ 
       nav.active {
         display: flex;
       }
-
+ 
       nav a {
         padding: 0.75rem 0;
       }
-
+ 
       .menu-toggle {
         display: block;
       }
-
+ 
       .header-actions {
         flex-direction: column;
         gap: 0.5rem;
       }
-
+ 
       .btn-header {
         width: 100%;
       }
     }
-
+ 
     /* Hero Section */
     .hero {
       background: linear-gradient(135deg, rgba(255, 75, 125, 0.08), rgba(244, 164, 96, 0.08));
@@ -374,7 +397,7 @@
       position: relative;
       overflow: hidden;
     }
-
+ 
     .hero::before {
       content: '';
       position: absolute;
@@ -385,7 +408,7 @@
       background: radial-gradient(circle, rgba(255, 75, 125, 0.12), transparent);
       border-radius: 50%;
     }
-
+ 
     .hero-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -394,12 +417,12 @@
       z-index: 2;
       position: relative;
     }
-
+ 
     .hero h1 {
       margin-bottom: 1.5rem;
       line-height: 1.15;
     }
-
+ 
     .hero-subtitle {
       font-size: 1.05rem;
       color: var(--text-light);
@@ -407,14 +430,14 @@
       line-height: 1.8;
       max-width: 520px;
     }
-
+ 
     .hero-cta {
       display: flex;
       gap: 1rem;
       margin-bottom: 3rem;
       flex-wrap: wrap;
     }
-
+ 
     .hero-stats {
       display: flex;
       gap: 3rem;
@@ -422,12 +445,12 @@
       border-top: 1px solid var(--border);
       margin-top: 2rem;
     }
-
+ 
     .stat {
       flex: 1;
       min-width: 120px;
     }
-
+ 
     .stat-value {
       font-size: 1.75rem;
       font-weight: 700;
@@ -435,14 +458,14 @@
       font-family: 'Playfair Display', serif;
       margin-bottom: 0.25rem;
     }
-
+ 
     .stat-label {
       font-size: 0.8rem;
       color: var(--text-lighter);
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
-
+ 
     .hero-image {
       position: relative;
       height: 480px;
@@ -455,12 +478,12 @@
       box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1);
       animation: float 6s ease-in-out infinite;
     }
-
+ 
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-25px); }
     }
-
+ 
     /* Hero Carousel */
     .hero-carousel-container {
       position: relative;
@@ -473,7 +496,7 @@
       box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1);
       overflow: hidden;
     }
-
+ 
     .hero-carousel {
       position: relative;
       width: 100%;
@@ -482,7 +505,7 @@
       align-items: center;
       justify-content: center;
     }
-
+ 
     .carousel-slide {
       position: absolute;
       width: 100%;
@@ -493,18 +516,18 @@
       align-items: center;
       justify-content: center;
     }
-
+ 
     .carousel-slide.active {
       opacity: 1;
       z-index: 2;
     }
-
+ 
     .carousel-image {
       font-size: 200px;
       animation: float 6s ease-in-out infinite;
       user-select: none;
     }
-
+ 
     /* Carousel Controls */
     .carousel-controls {
       position: absolute;
@@ -515,7 +538,7 @@
       gap: 1rem;
       z-index: 10;
     }
-
+ 
     .carousel-btn {
       width: 44px;
       height: 44px;
@@ -532,13 +555,13 @@
       align-items: center;
       justify-content: center;
     }
-
+ 
     .carousel-btn:hover {
       background: white;
       transform: scale(1.1);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
-
+ 
     /* Carousel Indicators */
     .carousel-indicators {
       position: absolute;
@@ -548,7 +571,7 @@
       gap: 0.75rem;
       z-index: 10;
     }
-
+ 
     .indicator {
       width: 12px;
       height: 12px;
@@ -558,70 +581,70 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-
+ 
     .indicator:hover {
       background: rgba(255, 255, 255, 0.8);
     }
-
+ 
     .indicator.active {
       background: white;
       transform: scale(1.3);
       box-shadow: 0 0 0 3px rgba(255, 75, 125, 0.3);
     }
-
+ 
     @media (max-width: 768px) {
       .hero-carousel-container {
         height: 380px;
       }
-
+ 
       .carousel-image {
         font-size: 140px;
       }
-
+ 
       .carousel-controls {
         bottom: 16px;
       }
-
+ 
       .carousel-btn {
         width: 40px;
         height: 40px;
         font-size: 1rem;
       }
-
+ 
       .carousel-indicators {
         top: 16px;
         right: 16px;
       }
-
+ 
       .indicator {
         width: 10px;
         height: 10px;
       }
     }
-
+ 
     /* Product Pricing */
     .product-pricing {
       margin-bottom: 1.5rem;
     }
-
+ 
     .price-row {
       display: flex;
       align-items: center;
       gap: 1rem;
       margin-bottom: 0.75rem;
     }
-
+ 
     .price-mrp {
       font-size: 0.85rem;
       color: var(--text-lighter);
       text-decoration: none;
     }
-
+ 
     .mrp-value {
       text-decoration: line-through;
       font-weight: 600;
     }
-
+ 
     .price-discount {
       display: inline-block;
       background: linear-gradient(135deg, var(--pink), var(--pink-dark));
@@ -632,7 +655,7 @@
       font-weight: 700;
       letter-spacing: 0.05em;
     }
-
+ 
     .product-price {
       font-size: 1.8rem;
       font-weight: 700;
@@ -640,53 +663,53 @@
       margin-bottom: 1.5rem;
       font-family: 'Playfair Display', serif;
     }
-
+ 
     @media (max-width: 968px) {
       .hero {
         padding: 60px 0 80px;
         min-height: auto;
       }
-
+ 
       .hero-content {
         grid-template-columns: 1fr;
         gap: 40px;
       }
-
+ 
       .hero-image {
         height: 380px;
         font-size: 140px;
       }
-
+ 
       .hero-stats {
         gap: 2rem;
       }
     }
-
+ 
     /* Section */
     .section {
       padding: 90px 0;
     }
-
+ 
     .section.alt {
       background: linear-gradient(135deg, rgba(255, 75, 125, 0.04), rgba(244, 164, 96, 0.04));
     }
-
+ 
     .section-header {
       text-align: center;
       margin-bottom: 4rem;
     }
-
+ 
     .section-header h2 {
       margin-bottom: 0.75rem;
     }
-
+ 
     .section-header p {
       font-size: 1.05rem;
       color: var(--text-light);
       max-width: 600px;
       margin: 0 auto;
     }
-
+ 
     /* Products Grid */
     .products-grid {
       display: grid;
@@ -694,7 +717,7 @@
       gap: 2rem;
       margin-bottom: 2rem;
     }
-
+ 
     .product-card {
       background: var(--white);
       border-radius: 12px;
@@ -706,13 +729,13 @@
       position: relative;
       border: 1px solid var(--border);
     }
-
+ 
     .product-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
       border-color: var(--pink);
     }
-
+ 
     .product-badge {
       position: absolute;
       top: 16px;
@@ -728,13 +751,13 @@
       color: white;
       box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
     }
-
+ 
     .product-badge.restocking {
       background: var(--warning);
       color: var(--dark);
       box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
     }
-
+ 
     .product-image {
       width: 100%;
       height: 240px;
@@ -745,21 +768,21 @@
       font-size: 100px;
       position: relative;
     }
-
+ 
     .product-info {
       padding: 2rem;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
     }
-
+ 
     .product-name {
       font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 0.75rem;
       color: var(--dark);
     }
-
+ 
     .product-description {
       font-size: 0.9rem;
       color: var(--text-light);
@@ -767,7 +790,7 @@
       line-height: 1.6;
       flex-grow: 1;
     }
-
+ 
     .product-specs {
       display: flex;
       gap: 1.5rem;
@@ -777,7 +800,7 @@
       font-size: 0.85rem;
       color: var(--text-lighter);
     }
-
+ 
     .product-price {
       font-size: 1.6rem;
       font-weight: 700;
@@ -785,35 +808,35 @@
       margin-bottom: 1.5rem;
       font-family: 'Playfair Display', serif;
     }
-
+ 
     .product-buttons {
       display: flex;
       flex-direction: column;
       gap: 0.6rem;
     }
-
+ 
     .button-row {
       display: flex;
       gap: 0.6rem;
     }
-
+ 
     .button-row .btn {
       flex: 1;
       padding: 0.8rem 1rem;
       font-size: 0.85rem;
     }
-
+ 
     .btn-full {
       width: 100%;
     }
-
+ 
     /* Benefits Section */
     .benefits-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
     }
-
+ 
     .benefit-card {
       background: var(--white);
       padding: 2.25rem;
@@ -823,32 +846,32 @@
       border: 1px solid var(--border);
       transition: all 0.3s ease;
     }
-
+ 
     .benefit-card:hover {
       transform: translateY(-4px);
       border-color: var(--pink);
       box-shadow: 0 8px 20px rgba(255, 75, 125, 0.1);
     }
-
+ 
     .benefit-icon {
       font-size: 2.8rem;
       margin-bottom: 1rem;
       display: block;
     }
-
+ 
     .benefit-card h3 {
       margin-bottom: 0.75rem;
       color: var(--dark);
       font-size: 1.15rem;
     }
-
+ 
     .benefit-card p {
       font-size: 0.9rem;
       color: var(--text-light);
       margin: 0;
       line-height: 1.6;
     }
-
+ 
     /* About Section */
     .about-content {
       display: grid;
@@ -856,22 +879,22 @@
       gap: 60px;
       align-items: center;
     }
-
+ 
     .about-text h2 {
       color: var(--dark);
       margin-bottom: 1.5rem;
     }
-
+ 
     .about-text p {
       margin-bottom: 1.5rem;
       line-height: 1.8;
     }
-
+ 
     .about-features {
       list-style: none;
       margin: 2rem 0;
     }
-
+ 
     .about-features li {
       padding: 0.75rem 0 0.75rem 2.5rem;
       position: relative;
@@ -879,7 +902,7 @@
       line-height: 1.7;
       font-size: 0.95rem;
     }
-
+ 
     .about-features li::before {
       content: '✓';
       position: absolute;
@@ -888,7 +911,7 @@
       font-weight: 700;
       font-size: 1.2rem;
     }
-
+ 
     .about-image {
       position: relative;
       height: 400px;
@@ -900,26 +923,26 @@
       font-size: 200px;
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
     }
-
+ 
     @media (max-width: 968px) {
       .about-content {
         grid-template-columns: 1fr;
         gap: 40px;
       }
-
+ 
       .about-image {
         height: 300px;
         font-size: 140px;
       }
     }
-
+ 
     /* Testimonials */
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
-
+ 
     .testimonial-card {
       background: var(--white);
       padding: 2rem;
@@ -927,20 +950,20 @@
       border: 1px solid var(--border);
       transition: all 0.3s ease;
     }
-
+ 
     .testimonial-card:hover {
       border-color: var(--pink);
       box-shadow: 0 8px 24px rgba(255, 75, 125, 0.1);
       transform: translateY(-4px);
     }
-
+ 
     .stars {
       font-size: 1.1rem;
       color: #FFC107;
       margin-bottom: 1rem;
       letter-spacing: 0.1em;
     }
-
+ 
     .testimonial-text {
       font-size: 0.95rem;
       color: var(--text-light);
@@ -948,7 +971,7 @@
       line-height: 1.7;
       font-style: italic;
     }
-
+ 
     .testimonial-author {
       display: flex;
       align-items: center;
@@ -956,7 +979,7 @@
       padding-top: 1.5rem;
       border-top: 1px solid var(--border);
     }
-
+ 
     .author-avatar {
       width: 44px;
       height: 44px;
@@ -970,26 +993,26 @@
       font-size: 1rem;
       flex-shrink: 0;
     }
-
+ 
     .author-info h4 {
       font-size: 0.9rem;
       margin: 0;
       color: var(--text);
       font-weight: 600;
     }
-
+ 
     .author-info p {
       font-size: 0.75rem;
       margin: 0.25rem 0 0;
       color: var(--text-lighter);
     }
-
+ 
     /* FAQ */
     .faq-container {
       max-width: 800px;
       margin: 0 auto;
     }
-
+ 
     .faq-item {
       background: var(--white);
       border: 1px solid var(--border);
@@ -998,12 +1021,12 @@
       overflow: hidden;
       transition: all 0.3s ease;
     }
-
+ 
     .faq-item.active {
       border-color: var(--pink);
       box-shadow: 0 4px 12px rgba(255, 75, 125, 0.1);
     }
-
+ 
     .faq-question {
       padding: 1.6rem;
       cursor: pointer;
@@ -1015,41 +1038,41 @@
       transition: all 0.3s ease;
       user-select: none;
     }
-
+ 
     .faq-question:hover {
       background: var(--bg);
       color: var(--pink);
     }
-
+ 
     .faq-toggle {
       font-size: 1.2rem;
       transition: transform 0.3s ease;
       flex-shrink: 0;
       margin-left: 1rem;
     }
-
+ 
     .faq-item.active .faq-toggle {
       transform: rotate(180deg);
     }
-
+ 
     .faq-answer {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease;
       padding: 0 1.6rem;
     }
-
+ 
     .faq-item.active .faq-answer {
       max-height: 500px;
       padding: 0 1.6rem 1.6rem;
     }
-
+ 
     .faq-answer p {
       margin: 0;
       line-height: 1.8;
       color: var(--text-light);
     }
-
+ 
     /* Newsletter */
     .newsletter {
       background: linear-gradient(135deg, var(--pink) 0%, var(--gold) 100%);
@@ -1057,12 +1080,12 @@
       padding: 80px 0;
       text-align: center;
     }
-
+ 
     .newsletter h2 {
       color: white;
       margin-bottom: 0.75rem;
     }
-
+ 
     .newsletter p {
       color: rgba(255, 255, 255, 0.95);
       margin-bottom: 2rem;
@@ -1071,7 +1094,7 @@
       margin-left: auto;
       margin-right: auto;
     }
-
+ 
     .newsletter-form {
       display: flex;
       gap: 0.5rem;
@@ -1080,7 +1103,7 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-
+ 
     .newsletter-form input {
       flex: 1;
       min-width: 240px;
@@ -1092,11 +1115,11 @@
       outline: none;
       transition: all 0.3s ease;
     }
-
+ 
     .newsletter-form input:focus {
       box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
     }
-
+ 
     .newsletter-form button {
       padding: 0.95rem 2rem;
       background: var(--dark);
@@ -1109,27 +1132,27 @@
       font-family: 'DM Sans', sans-serif;
       white-space: nowrap;
     }
-
+ 
     .newsletter-form button:hover {
       background: rgba(15, 20, 25, 0.9);
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
-
+ 
     /* Footer */
     footer {
       background: var(--dark);
       color: white;
       padding: 80px 0 30px;
     }
-
+ 
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 3rem;
       margin-bottom: 3rem;
     }
-
+ 
     .footer-section h4 {
       font-size: 0.95rem;
       margin-bottom: 1.5rem;
@@ -1137,25 +1160,25 @@
       color: white;
       letter-spacing: 0.05em;
     }
-
+ 
     .footer-section ul {
       list-style: none;
     }
-
+ 
     .footer-section li {
       margin-bottom: 0.75rem;
     }
-
+ 
     .footer-section a {
       color: rgba(255, 255, 255, 0.7);
       font-size: 0.9rem;
       transition: color 0.3s ease;
     }
-
+ 
     .footer-section a:hover {
       color: var(--pink);
     }
-
+ 
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 2rem;
@@ -1167,12 +1190,45 @@
       font-size: 0.85rem;
       color: rgba(255, 255, 255, 0.6);
     }
-
+ 
+    .iim-alumni-badge {
+      background: linear-gradient(135deg, #FF4B7D, #7B68EE);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 2px 8px rgba(255, 75, 125, 0.3);
+      letter-spacing: 0.5px;
+    }
+ 
+    .iim-alumni-badge::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+ 
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+ 
     .social-links {
       display: flex;
       gap: 1rem;
     }
-
+ 
     .social-links a {
       width: 44px;
       height: 44px;
@@ -1185,30 +1241,30 @@
       font-size: 1rem;
       transition: all 0.3s ease;
     }
-
+ 
     .social-links a:hover {
       border-color: var(--pink);
       background: var(--pink);
       transform: translateY(-3px);
     }
-
+ 
     @media (max-width: 768px) {
       footer {
         padding: 60px 0 30px;
       }
-
+ 
       .footer-grid {
         gap: 2rem;
         grid-template-columns: repeat(2, 1fr);
       }
-
+ 
       .footer-bottom {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
       }
     }
-
+ 
     /* Modal */
     .modal {
       display: none;
@@ -1225,16 +1281,16 @@
       overflow-y: auto;
       animation: fadeIn 0.3s ease;
     }
-
+ 
     .modal.show {
       display: flex;
     }
-
+ 
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-
+ 
     .modal-content {
       background: var(--white);
       border-radius: 12px;
@@ -1250,29 +1306,29 @@
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
       z-index: 1001;
     }
-
+ 
     .modal-content::-webkit-scrollbar {
       width: 8px;
     }
-
+ 
     .modal-content::-webkit-scrollbar-track {
       background: transparent;
     }
-
+ 
     .modal-content::-webkit-scrollbar-thumb {
       background: var(--border);
       border-radius: 4px;
     }
-
+ 
     .modal-content::-webkit-scrollbar-thumb:hover {
       background: var(--text-lighter);
     }
-
+ 
     .modal-checkout {
       padding: 2rem;
       max-width: 650px;
     }
-
+ 
     @keyframes slideUp {
       from {
         transform: translateY(50px);
@@ -1283,7 +1339,7 @@
         opacity: 1;
       }
     }
-
+ 
     .modal-close {
       position: absolute;
       top: 1.5rem;
@@ -1305,28 +1361,28 @@
       line-height: 1;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
-
+ 
     .modal-close:hover {
       color: var(--pink);
       background: var(--pink-light);
       transform: rotate(90deg) scale(1.1);
       box-shadow: 0 4px 12px rgba(255, 75, 125, 0.3);
     }
-
+ 
     .modal-close:active {
       transform: rotate(90deg) scale(0.95);
     }
-
+ 
     .modal-close:focus {
       outline: 2px solid var(--pink);
       outline-offset: 2px;
     }
-
+ 
     .modal h2 {
       margin-bottom: 1.5rem;
       margin-top: 0;
     }
-
+ 
     /* Checkout Modal Styles */
     .checkout-progress {
       display: flex;
@@ -1335,7 +1391,7 @@
       margin-bottom: 2.5rem;
       position: relative;
     }
-
+ 
     .progress-step {
       display: flex;
       flex-direction: column;
@@ -1344,7 +1400,7 @@
       flex: 1;
       z-index: 2;
     }
-
+ 
     .step-circle {
       width: 40px;
       height: 40px;
@@ -1359,14 +1415,14 @@
       color: var(--text-lighter);
       transition: all 0.3s ease;
     }
-
+ 
     .progress-step.active .step-circle {
       background: linear-gradient(135deg, var(--pink), var(--pink-dark));
       border-color: var(--pink);
       color: white;
       box-shadow: 0 4px 12px rgba(255, 75, 125, 0.3);
     }
-
+ 
     .progress-step span {
       font-size: 0.75rem;
       color: var(--text-lighter);
@@ -1375,11 +1431,11 @@
       font-weight: 600;
       text-align: center;
     }
-
+ 
     .progress-step.active span {
       color: var(--pink);
     }
-
+ 
     .progress-line {
       flex: 1;
       height: 2px;
@@ -1388,42 +1444,42 @@
       position: relative;
       top: -20px;
     }
-
+ 
     .progress-step.active ~ .progress-line {
       background: linear-gradient(90deg, var(--pink), var(--border));
     }
-
+ 
     @media (max-width: 768px) {
       .checkout-progress {
         margin-bottom: 2rem;
       }
-
+ 
       .step-circle {
         width: 36px;
         height: 36px;
         font-size: 0.85rem;
       }
-
+ 
       .progress-step span {
         font-size: 0.65rem;
       }
-
+ 
       .progress-line {
         margin: 0 0.5rem;
       }
     }
-
+ 
     /* Checkout Sections */
     .checkout-section {
       margin-bottom: 2rem;
       padding-bottom: 2rem;
       border-bottom: 1px solid var(--border);
     }
-
+ 
     .checkout-section:last-of-type {
       border-bottom: none;
     }
-
+ 
     .section-title {
       font-size: 1.05rem;
       font-weight: 700;
@@ -1433,7 +1489,7 @@
       align-items: center;
       gap: 0.5rem;
     }
-
+ 
     .section-title::before {
       content: '';
       width: 4px;
@@ -1441,7 +1497,7 @@
       background: linear-gradient(180deg, var(--pink), var(--gold));
       border-radius: 2px;
     }
-
+ 
     /* Product Selector */
     .product-selector {
       display: grid;
@@ -1449,7 +1505,7 @@
       gap: 1.5rem;
       margin-bottom: 1.5rem;
     }
-
+ 
     .product-select {
       appearance: none;
       padding: 1rem;
@@ -1466,17 +1522,17 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-
+ 
     .product-select:hover {
       border-color: var(--pink);
     }
-
+ 
     .product-select:focus {
       outline: none;
       border-color: var(--pink);
       box-shadow: 0 0 0 3px rgba(255, 75, 125, 0.1);
     }
-
+ 
     .product-preview {
       background: var(--bg);
       border: 2px solid var(--border);
@@ -1487,32 +1543,32 @@
       gap: 1rem;
       transition: all 0.3s ease;
     }
-
+ 
     .product-preview.active {
       border-color: var(--pink);
       background: var(--pink-light);
     }
-
+ 
     .preview-icon {
       font-size: 2.5rem;
     }
-
+ 
     .preview-info p {
       margin: 0;
       color: var(--text);
       font-size: 0.9rem;
     }
-
+ 
     .preview-name {
       font-weight: 600;
       margin-bottom: 0.25rem !important;
     }
-
+ 
     .preview-size {
       color: var(--text-lighter);
       font-size: 0.8rem !important;
     }
-
+ 
     /* Quantity Control */
     .quantity-section {
       display: flex;
@@ -1520,7 +1576,7 @@
       gap: 1rem;
       grid-column: 1 / -1;
     }
-
+ 
     .qty-label {
       display: block;
       font-weight: 600;
@@ -1529,7 +1585,7 @@
       margin-bottom: 0.5rem;
       flex: 1;
     }
-
+ 
     .quantity-control {
       display: flex;
       align-items: center;
@@ -1538,12 +1594,12 @@
       overflow: hidden;
       transition: all 0.3s ease;
     }
-
+ 
     .quantity-control:focus-within {
       border-color: var(--pink);
       box-shadow: 0 0 0 3px rgba(255, 75, 125, 0.1);
     }
-
+ 
     .qty-btn {
       background: var(--bg);
       border: none;
@@ -1554,12 +1610,12 @@
       transition: all 0.3s ease;
       font-size: 1.1rem;
     }
-
+ 
     .qty-btn:hover {
       background: var(--pink-light);
       color: var(--pink);
     }
-
+ 
     .qty-input {
       border: none;
       outline: none;
@@ -1570,22 +1626,22 @@
       font-size: 0.95rem;
       background: transparent;
     }
-
+ 
     /* Form Layout */
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
-
+ 
     .form-group {
       margin-bottom: 1rem;
     }
-
+ 
     .form-group.full-width {
       grid-column: 1 / -1;
     }
-
+ 
     .form-group label {
       display: block;
       margin-bottom: 0.6rem;
@@ -1593,7 +1649,7 @@
       color: var(--text);
       font-size: 0.9rem;
     }
-
+ 
     .form-group input,
     .form-group select,
     .form-group textarea {
@@ -1606,12 +1662,12 @@
       color: var(--text);
       transition: all 0.3s ease;
     }
-
+ 
     .form-group input::placeholder,
     .form-group textarea::placeholder {
       color: var(--text-lighter);
     }
-
+ 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
@@ -1619,31 +1675,31 @@
       border-color: var(--pink);
       box-shadow: 0 0 0 3px rgba(255, 75, 125, 0.1);
     }
-
+ 
     .form-group textarea {
       resize: vertical;
       min-height: 100px;
       font-family: 'DM Sans', sans-serif;
     }
-
+ 
     .form-error {
       color: var(--error);
       font-size: 0.8rem;
       margin-top: 0.4rem;
       display: none;
     }
-
+ 
     .form-group.error input,
     .form-group.error select,
     .form-group.error textarea {
       border-color: var(--error);
       background: rgba(239, 68, 68, 0.05);
     }
-
+ 
     .form-group.error .form-error {
       display: block;
     }
-
+ 
     /* Order Summary */
     .order-summary {
       background: var(--bg);
@@ -1652,7 +1708,7 @@
       margin-bottom: 1.75rem;
       margin-top: 1.75rem;
     }
-
+ 
     .summary-row {
       display: flex;
       justify-content: space-between;
@@ -1660,42 +1716,42 @@
       margin-bottom: 1rem;
       font-size: 0.95rem;
     }
-
+ 
     .summary-row.total {
       margin-bottom: 0;
       margin-top: 0.5rem;
       padding-top: 1rem;
     }
-
+ 
     .summary-label {
       color: var(--text-light);
       font-weight: 500;
     }
-
+ 
     .summary-value {
       color: var(--text);
       font-weight: 600;
     }
-
+ 
     .total-amount {
       font-size: 1.4rem;
       color: var(--pink);
       font-family: 'Playfair Display', serif;
     }
-
+ 
     .summary-divider {
       height: 1px;
       background: var(--border);
       margin: 1rem 0;
     }
-
+ 
     /* CTA Section */
     .checkout-cta {
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
-
+ 
     .btn-lg {
       padding: 1.1rem 2rem;
       font-size: 1rem;
@@ -1704,57 +1760,57 @@
       justify-content: center;
       gap: 0.75rem;
     }
-
+ 
     .btn-icon {
       font-size: 1.1rem;
     }
-
+ 
     .btn-full {
       width: 100%;
     }
-
+ 
     .payment-note {
       text-align: center;
       font-size: 0.85rem;
       color: var(--text-lighter);
       margin: 0;
     }
-
+ 
     @media (max-width: 768px) {
       .modal-content {
         padding: 1.75rem;
       }
-
+ 
       .modal-checkout {
         padding: 1.5rem;
       }
-
+ 
       .checkout-section {
         margin-bottom: 1.5rem;
         padding-bottom: 1.5rem;
       }
-
+ 
       .product-selector {
         grid-template-columns: 1fr;
       }
-
+ 
       .form-row {
         grid-template-columns: 1fr;
       }
-
+ 
       .quantity-section {
         flex-direction: column;
       }
-
+ 
       .qty-label {
         margin-bottom: 0.5rem;
       }
-
+ 
       .order-summary {
         padding: 1.25rem;
       }
     }
-
+ 
     /* Toast */
     .toast {
       position: fixed;
@@ -1774,33 +1830,33 @@
       gap: 0.75rem;
       max-width: 400px;
     }
-
+ 
     .toast.error {
       background: var(--error);
     }
-
+ 
     .toast.warning {
       background: var(--warning);
       color: var(--dark);
     }
-
+ 
     @media (max-width: 768px) {
       .toast {
         right: 15px;
         left: 15px;
         bottom: 15px;
       }
-
+ 
       .modal-content {
         padding: 1.75rem;
       }
-
+ 
       .modal-close {
         top: 1rem;
         right: 1rem;
       }
     }
-
+ 
     /* Loading State */
     .loading {
       display: inline-block;
@@ -1811,17 +1867,17 @@
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
     }
-
+ 
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
-
+ 
     /* Accessibility */
     :focus-visible {
       outline: 2px solid var(--pink);
       outline-offset: 2px;
     }
-
+ 
     /* Utility Classes */
     .mt-4 { margin-top: 2rem; }
     .text-center { text-align: center; }
@@ -1834,12 +1890,12 @@
     <div class="container">
       <div class="header-inner">
         <a href="#" class="logo">
-  <div class="logo-main">
-    <div class="logo-icon">🌾</div>
-    <span>Popkaari</span>
-  </div>
-  <span class="logo-badge">IIM Alumni Initiative</span>
-</a>
+          <div class="logo-main">
+            <div class="logo-icon">🌾</div>
+            <span>Popkaari</span>
+          </div>
+          <span class="logo-badge">IIM Alumni Initiative</span>
+        </a>
         <nav id="mainNav">
           <a href="#products">Products</a>
           <a href="#about">About</a>
@@ -1859,7 +1915,7 @@
       </div>
     </div>
   </header>
-
+ 
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
@@ -1904,7 +1960,7 @@
             <button class="carousel-btn prev" onclick="prevSlide()" aria-label="Previous slide">←</button>
             <button class="carousel-btn next" onclick="nextSlide()" aria-label="Next slide">→</button>
           </div>
-
+ 
           <!-- Carousel Indicators -->
           <div class="carousel-indicators">
             <button class="indicator active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
@@ -1915,7 +1971,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- Products Section -->
   <section class="section alt" id="products">
     <div class="container">
@@ -1923,14 +1979,14 @@
         <h2>Our Products</h2>
         <p>Handpicked makhana with the perfect crunch and flavor</p>
       </div>
-
+ 
       <div class="products-grid">
         <!-- Product 1 -->
         <div class="product-card">
           <span class="product-badge">✓ In Stock</span>
           <div class="product-image">🌾</div>
           <div class="product-info">
-            <h3 class="product-name">XL Grain Size Raw Makhana</h3>
+            <h3 class="product-name">Raw Makhana</h3>
             <p class="product-description">Pure and versatile. Roast it your way, add to kheer, or build your own mixes.</p>
             <div class="product-specs">
               <span>📦 100g</span>
@@ -1952,7 +2008,7 @@
             </div>
           </div>
         </div>
-
+ 
         <!-- Product 2 -->
         <div class="product-card">
           <span class="product-badge restocking">Restocking Soon</span>
@@ -1980,7 +2036,7 @@
             </div>
           </div>
         </div>
-
+ 
         <!-- Product 3 -->
         <div class="product-card">
           <span class="product-badge restocking">Restocking Soon</span>
@@ -2011,7 +2067,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- Benefits Section -->
   <section class="section" id="benefits">
     <div class="container">
@@ -2019,38 +2075,38 @@
         <h2>Why Choose Popkaari?</h2>
         <p>Everything you need in a premium makhana snack</p>
       </div>
-
+ 
       <div class="benefits-grid">
         <div class="benefit-card">
           <span class="benefit-icon">🌾</span>
           <h3>Direct from Farmers</h3>
           <p>Sourced from grain-guaranteed farms. No middlemen. Guaranteed quality and freshness.</p>
         </div>
-
+ 
         <div class="benefit-card">
           <span class="benefit-icon">✅</span>
           <h3>100% Natural</h3>
           <p>Zero artificial flavors, preservatives, or additives. Just pure, wholesome makhana.</p>
         </div>
-
+ 
         <div class="benefit-card">
           <span class="benefit-icon">🔒</span>
           <h3>FSSAI Certified</h3>
           <p>Hygienically packed and certified. License: 13326998000075</p>
         </div>
-
+ 
         <div class="benefit-card">
           <span class="benefit-icon">💪</span>
           <h3>Premium Quality</h3>
           <p>XL grain size, hand-picked, and roasted to perfection for maximum crunch.</p>
         </div>
-
+ 
         <div class="benefit-card">
           <span class="benefit-icon">📦</span>
           <h3>Fresh-Sealed Packaging</h3>
           <p>Special packaging ensures maximum freshness and crunch. 3-month shelf life.</p>
         </div>
-
+ 
         <div class="benefit-card">
           <span class="benefit-icon">🚀</span>
           <h3>Easy Ordering</h3>
@@ -2059,7 +2115,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- About Section -->
   <section class="section alt" id="about">
     <div class="container">
@@ -2083,7 +2139,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- Testimonials -->
   <section class="section" id="reviews">
     <div class="container">
@@ -2091,7 +2147,7 @@
         <h2>What Our Customers Say</h2>
         <p>Real reviews from real snack lovers</p>
       </div>
-
+ 
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
@@ -2104,7 +2160,7 @@
             </div>
           </div>
         </div>
-
+ 
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">"Gifted this to my parents and they've been ordering it regularly since. The flavors are bold without being overwhelming. Highly recommend!"</p>
@@ -2116,7 +2172,7 @@
             </div>
           </div>
         </div>
-
+ 
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">"Travel snack essential! Light, doesn't crumble in my bag, and keeps me satisfied through long journeys. Worth every penny."</p>
@@ -2131,7 +2187,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- FAQ Section -->
   <section class="section alt" id="faq">
     <div class="container">
@@ -2139,7 +2195,7 @@
         <h2>Frequently Asked Questions</h2>
         <p>Everything you need to know about Popkaari</p>
       </div>
-
+ 
       <div class="faq-container">
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
@@ -2150,7 +2206,7 @@
             <p>Popkaari is premium, handpicked raw makhana (fox nuts) from trusted farmers. Our makhana features XL grain size, is 100% natural, and has been selected for quality and crunch. You can roast it your way, add it to kheer, or mix it into your own creations.</p>
           </div>
         </div>
-
+ 
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
             <span>Is it really 100% natural?</span>
@@ -2160,7 +2216,7 @@
             <p>Yes! Popkaari contains only raw makhana and natural flavors (for flavored variants). No artificial additives, preservatives, or colors. Just pure makhana as nature intended.</p>
           </div>
         </div>
-
+ 
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
             <span>How do I cook Raw Makhana?</span>
@@ -2170,7 +2226,7 @@
             <p>Raw makhana is versatile! You can dry roast it in a pan over medium heat, add to kheer while cooking, or blend it into flours. It's perfect for vrat (fasting) too. Each serving offers nutritious crunch and versatility.</p>
           </div>
         </div>
-
+ 
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
             <span>Where can I buy Popkaari?</span>
@@ -2180,7 +2236,7 @@
             <p>You can order Popkaari through Amazon, Blinkit for instant delivery, or directly via Razorpay payment gateway. We're expanding to more platforms soon. For any questions, contact us via WhatsApp or email.</p>
           </div>
         </div>
-
+ 
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
             <span>What's the shelf life?</span>
@@ -2190,7 +2246,7 @@
             <p>Popkaari stays fresh for 3 months from the date of packing when stored in a cool, dry place. Our special packaging ensures maximum freshness and crunch. Once opened, keep in an airtight container.</p>
           </div>
         </div>
-
+ 
         <div class="faq-item">
           <div class="faq-question" onclick="toggleFaq(this)" role="button" tabindex="0" aria-expanded="false">
             <span>Do you offer bulk or corporate gifting?</span>
@@ -2203,7 +2259,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- Newsletter -->
   <section class="newsletter" id="contact">
     <div class="container">
@@ -2215,7 +2271,7 @@
       </form>
     </div>
   </section>
-
+ 
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -2229,7 +2285,7 @@
             <li><a href="#">Bulk Orders</a></li>
           </ul>
         </div>
-
+ 
         <div class="footer-section">
           <h4>Company</h4>
           <ul>
@@ -2239,7 +2295,7 @@
             <li><a href="#">Press</a></li>
           </ul>
         </div>
-
+ 
         <div class="footer-section">
           <h4>Help & Support</h4>
           <ul>
@@ -2249,7 +2305,7 @@
             <li><a href="https://wa.me/919910657383?text=Hi%20Popkaari%21%20I%20have%20a%20query" target="_blank" rel="noopener">WhatsApp</a></li>
           </ul>
         </div>
-
+ 
         <div class="footer-section">
           <h4>Legal</h4>
           <ul>
@@ -2259,7 +2315,7 @@
             <li><a href="#">Contact Us</a></li>
           </ul>
         </div>
-
+ 
         <div class="footer-section">
           <h4>Connect</h4>
           <ul>
@@ -2270,19 +2326,24 @@
           </ul>
         </div>
       </div>
-
+ 
       <div class="footer-bottom">
-        <p>&copy; 2026 Popkaari. All rights reserved. | FSSAI License: 13326998000075</p>
+        <div>
+          <p>&copy; 2026 Popkaari. All rights reserved. | FSSAI License: 13326998000075</p>
+          <div style="margin-top: 0.5rem;">
+            <span class="iim-alumni-badge">IIM Aligarh Alumni Initiative</span>
+          </div>
+        </div>
         <div class="social-links">
-          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">📱</a>
-          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">f</a>
-          <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">𝕏</a>
-          <a href="https://wa.me/919910657383" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">Twitter</a>
+          <a href="https://wa.me/919910657383" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
         </div>
       </div>
     </div>
   </footer>
-
+ 
   <!-- Buy Modal -->
   <div class="modal" id="buyModal">
     <div class="modal-content">
@@ -2308,7 +2369,7 @@
       </div>
     </div>
   </div>
-
+ 
   <!-- Razorpay Modal -->
   <div class="modal" id="razorpayModal">
     <div class="modal-content modal-checkout">
@@ -2331,7 +2392,7 @@
           <span>Payment</span>
         </div>
       </div>
-
+ 
       <form onsubmit="processRazorpayPayment(event)">
         <!-- Step 1: Product Selection -->
         <div class="checkout-section">
@@ -2345,7 +2406,7 @@
                 <option value="Peri Peri|82|70g">Peri Peri - ₹82 (70g)</option>
               </select>
             </div>
-
+ 
             <!-- Product Preview -->
             <div class="product-preview" id="productPreview">
               <div class="preview-icon">🌾</div>
@@ -2355,7 +2416,7 @@
               </div>
             </div>
           </div>
-
+ 
           <div class="quantity-section">
             <label for="quantity" class="qty-label">Quantity</label>
             <div class="quantity-control">
@@ -2365,7 +2426,7 @@
             </div>
           </div>
         </div>
-
+ 
         <!-- Step 2: Contact Details -->
         <div class="checkout-section">
           <h3 class="section-title">Delivery Details</h3>
@@ -2377,28 +2438,28 @@
               <div class="form-error">Please enter your name</div>
             </div>
           </div>
-
+ 
           <div class="form-row">
             <div class="form-group">
               <label for="customerEmail">Email *</label>
               <input type="email" id="customerEmail" placeholder="john@example.com" required>
               <div class="form-error">Please enter a valid email</div>
             </div>
-
+ 
             <div class="form-group">
               <label for="customerPhone">Phone *</label>
               <input type="tel" id="customerPhone" placeholder="9876543210" pattern="[0-9]{10}" required>
               <div class="form-error">10-digit phone number</div>
             </div>
           </div>
-
+ 
           <div class="form-group full-width">
             <label for="customerAddress">Delivery Address *</label>
             <textarea id="customerAddress" placeholder="House no., Street, Area, City, Pincode" required></textarea>
             <div class="form-error">Please enter your address</div>
           </div>
         </div>
-
+ 
         <!-- Order Summary -->
         <div class="order-summary">
           <div class="summary-row">
@@ -2415,7 +2476,7 @@
             <span class="summary-value total-amount" id="amountDisplay">₹249</span>
           </div>
         </div>
-
+ 
         <!-- CTA Section -->
         <div class="checkout-cta">
           <button type="submit" class="btn btn-primary btn-full btn-lg" id="payBtn">
@@ -2424,13 +2485,13 @@
           </button>
           <p class="payment-note">🔒 Secure payment powered by Razorpay</p>
         </div>
-
+ 
         <!-- Fallback Close Button -->
         <button type="button" class="btn btn-outline btn-full" onclick="closeModal('razorpayModal')" style="margin-top: 1rem;">Cancel & Close</button>
       </form>
     </div>
   </div>
-
+ 
   <!-- Notify Modal -->
   <div class="modal" id="notifyModal">
     <div class="modal-content">
@@ -2443,34 +2504,34 @@
           <input type="text" id="notifyName" required>
           <div class="form-error">Please enter your name</div>
         </div>
-
+ 
         <div class="form-group">
           <label for="notifyEmail">Email</label>
           <input type="email" id="notifyEmail" required>
           <div class="form-error">Please enter a valid email</div>
         </div>
-
+ 
         <div class="form-group">
           <label for="notifyPhone">Phone</label>
           <input type="tel" id="notifyPhone" pattern="[0-9]{10}" required>
           <div class="form-error">Please enter a valid 10-digit phone number</div>
         </div>
-
+ 
         <button type="submit" class="btn btn-primary btn-full">Notify Me</button>
       </form>
     </div>
   </div>
-
+ 
   <script src="https://checkout.razorpay.com/v1/checkout.js" async></script>
   <script>
     // ===== CONFIGURATION =====
     const CONFIG = {
-      RAZORPAY_KEY: 'rzp_live_SWiilhylccqqIS', // Your actual Razorpay Live Key
+      RAZORPAY_KEY: 'rzp_live_54LgxzsSMW44jERAuGrZFgTI', // Your actual Razorpay Live Key
       WHATSAPP_NUMBER: '919910657383',
       AMAZON_SEARCH: 'https://amazon.in/s?k=popkaari+makhana',
       BLINKIT_URL: 'https://blinkit.com'
     };
-
+ 
     // ===== SCROLL RESTORATION & SAFETY =====
     // Ensure scroll is always enabled on page load
     window.addEventListener('load', () => {
@@ -2478,7 +2539,7 @@
       document.documentElement.style.overflow = '';
       document.body.style.position = '';
     });
-
+ 
     // Additional safety: enable scroll periodically
     setInterval(() => {
       // Only reset if body has overflow hidden (which shouldn't happen)
@@ -2489,13 +2550,13 @@
         document.body.style.position = '';
       }
     }, 1000);
-
+ 
     // ===== CAROUSEL FUNCTIONALITY =====
     let currentSlide = 0;
     const slides = document.querySelectorAll('.carousel-slide');
     const indicators = document.querySelectorAll('.indicator');
     let autoPlayInterval;
-
+ 
     function showSlide(n) {
       slides.forEach(slide => slide.classList.remove('active'));
       indicators.forEach(indicator => indicator.classList.remove('active'));
@@ -2504,39 +2565,39 @@
       slides[currentSlide].classList.add('active');
       indicators[currentSlide].classList.add('active');
     }
-
+ 
     function nextSlide() {
       showSlide(currentSlide + 1);
       resetAutoPlay();
     }
-
+ 
     function prevSlide() {
       showSlide(currentSlide - 1);
       resetAutoPlay();
     }
-
+ 
     function goToSlide(n) {
       showSlide(n);
       resetAutoPlay();
     }
-
+ 
     function autoPlayCarousel() {
       autoPlayInterval = setInterval(() => {
         showSlide(currentSlide + 1);
       }, 4000); // Change slide every 4 seconds
     }
-
+ 
     function resetAutoPlay() {
       clearInterval(autoPlayInterval);
       autoPlayCarousel();
     }
-
+ 
     // Initialize carousel
     if (slides.length > 0) {
       showSlide(0);
       autoPlayCarousel();
     }
-
+ 
     // Pause autoplay on hover
     const carouselContainer = document.querySelector('.hero-carousel-container');
     if (carouselContainer) {
@@ -2549,7 +2610,7 @@
       // Don't lock body scroll - allows users to scroll background while modal is open
       // This is especially important for Razorpay modal which may take time
     }
-
+ 
     function closeModal(modalId) {
       const modal = document.getElementById(modalId);
       modal.classList.remove('show');
@@ -2566,7 +2627,7 @@
         window.scrollBy(0, 0);
       }, 50);
     }
-
+ 
     function showToast(message, type = 'success') {
       const toast = document.createElement('div');
       toast.className = `toast ${type}`;
@@ -2574,7 +2635,7 @@
       document.body.appendChild(toast);
       setTimeout(() => toast.remove(), 3500);
     }
-
+ 
     // ===== QUANTITY CONTROLS =====
     function increaseQty() {
       const input = document.getElementById('quantity');
@@ -2583,7 +2644,7 @@
         updateAmount();
       }
     }
-
+ 
     function decreaseQty() {
       const input = document.getElementById('quantity');
       if (parseInt(input.value) > 1) {
@@ -2591,7 +2652,7 @@
         updateAmount();
       }
     }
-
+ 
     // ===== CHECKOUT FUNCTIONS =====
     function updateProductDisplay() {
       const product = document.getElementById('productSelect').value;
@@ -2608,14 +2669,14 @@
         `;
         return;
       }
-
+ 
       const [name, price, size] = product.split('|');
       const icons = {
         'Raw Makhana': '🌾',
         'Classic Salted': '🧂',
         'Peri Peri': '🌶️'
       };
-
+ 
       preview.classList.add('active');
       preview.innerHTML = `
         <div class="preview-icon">${icons[name] || '🍿'}</div>
@@ -2625,11 +2686,11 @@
         </div>
       `;
     }
-
+ 
     function updateAmount() {
       const product = document.getElementById('productSelect').value;
       const quantity = parseInt(document.getElementById('quantity').value) || 1;
-
+ 
       if (product) {
         const [name, price] = product.split('|');
         const subtotal = parseInt(price) * quantity;
@@ -2641,7 +2702,7 @@
         document.getElementById('amountDisplay').textContent = '₹0';
       }
     }
-
+ 
     function checkout(platform, product, price) {
       if (platform === 'amazon') {
         window.open(CONFIG.AMAZON_SEARCH, '_blank');
@@ -2651,35 +2712,35 @@
         showToast(`⚡ Opening ${product} on Blinkit...`);
       }
     }
-
+ 
     function openRazorpayModal(product, price) {
       document.getElementById('productSelect').value = `${product}|${price}|100g`;
       updateAmount();
       updateProductDisplay();
       openModal('razorpayModal');
     }
-
+ 
     function processRazorpayPayment(e) {
       e.preventDefault();
-
+ 
       const product = document.getElementById('productSelect').value;
       const name = document.getElementById('customerName').value;
       const email = document.getElementById('customerEmail').value;
       const phone = document.getElementById('customerPhone').value;
-
+ 
       if (!validateForm(e.target)) {
         return;
       }
-
+ 
       if (!product) {
         showToast('Please select a product', 'warning');
         return;
       }
-
+ 
       const [productName, price] = product.split('|');
       const quantity = parseInt(document.getElementById('quantity').value) || 1;
       const amount = parseInt(price) * quantity * 100;
-
+ 
       const options = {
         key: CONFIG.RAZORPAY_KEY,
         amount: amount,
@@ -2715,24 +2776,24 @@
           }
         }
       };
-
+ 
       const rzp = new Razorpay(options);
       rzp.open();
     }
-
+ 
     // ===== HEADER & NAVIGATION =====
     document.getElementById('menuToggle')?.addEventListener('click', () => {
       const nav = document.getElementById('mainNav');
       nav.classList.toggle('active');
     });
-
+ 
     // Close mobile menu when link clicked
     document.querySelectorAll('#mainNav a').forEach(link => {
       link.addEventListener('click', () => {
         document.getElementById('mainNav').classList.remove('active');
       });
     });
-
+ 
     // ===== FAQ ACCORDION =====
     function toggleFaq(element) {
       const faqItem = element.parentElement;
@@ -2748,7 +2809,7 @@
       faqItem.classList.toggle('active');
       element.setAttribute('aria-expanded', !isActive);
     }
-
+ 
     // Keyboard support for FAQ
     document.querySelectorAll('.faq-question').forEach(question => {
       question.addEventListener('keypress', (e) => {
@@ -2758,7 +2819,7 @@
         }
       });
     });
-
+ 
     // ===== CHECKOUT FUNCTIONS =====
     function checkout(platform, product, price) {
       if (platform === 'amazon') {
@@ -2769,17 +2830,17 @@
         showToast(`⚡ Opening ${product} on Blinkit...`);
       }
     }
-
+ 
     function openRazorpayModal(product, price) {
       document.getElementById('productSelect').value = `${product}|${price}|100g`;
       updateAmount();
       openModal('razorpayModal');
     }
-
+ 
     function updateAmount() {
       const product = document.getElementById('productSelect').value;
       const quantity = parseInt(document.getElementById('quantity').value) || 1;
-
+ 
       if (product) {
         const [name, price] = product.split('|');
         const total = parseInt(price) * quantity;
@@ -2788,28 +2849,28 @@
         document.getElementById('amountDisplay').textContent = '₹0';
       }
     }
-
+ 
     function processRazorpayPayment(e) {
       e.preventDefault();
-
+ 
       const product = document.getElementById('productSelect').value;
       const name = document.getElementById('customerName').value;
       const email = document.getElementById('customerEmail').value;
       const phone = document.getElementById('customerPhone').value;
-
+ 
       if (!validateForm(e.target)) {
         return;
       }
-
+ 
       if (!product) {
         showToast('Please select a product', 'warning');
         return;
       }
-
+ 
       const [productName, price] = product.split('|');
       const quantity = parseInt(document.getElementById('quantity').value) || 1;
       const amount = parseInt(price) * quantity * 100;
-
+ 
       const options = {
         key: CONFIG.RAZORPAY_KEY,
         amount: amount,
@@ -2836,38 +2897,38 @@
           }
         }
       };
-
+ 
       const rzp = new Razorpay(options);
       rzp.open();
     }
-
+ 
     // ===== NOTIFY ME =====
     function notifyMe(product) {
       document.getElementById('notifyProduct').textContent = product;
       openModal('notifyModal');
     }
-
+ 
     function handleNotify(e) {
       e.preventDefault();
-
+ 
       if (!validateForm(e.target)) {
         return;
       }
-
+ 
       const product = document.getElementById('notifyProduct').textContent;
       const name = document.getElementById('notifyName').value;
       const email = document.getElementById('notifyEmail').value;
       const phone = document.getElementById('notifyPhone').value;
-
+ 
       const message = `Hi Popkaari, notify me when ${product} is back in stock. Name: ${name}, Email: ${email}, Phone: ${phone}`;
       const encodedMsg = encodeURIComponent(message);
       window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodedMsg}`, '_blank');
-
+ 
       closeModal('notifyModal');
       e.target.reset();
       showToast(`✓ We'll notify you when ${product} is available!`);
     }
-
+ 
     // ===== QUICK BUY =====
     function updateQuickBuy() {
       const select = document.getElementById('quickBuyProduct');
@@ -2877,16 +2938,16 @@
         select.title = `${product} - ₹${price}`;
       }
     }
-
+ 
     function handleQuickBuy(platform) {
       const product = document.getElementById('quickBuyProduct').value;
       if (!product) {
         showToast('Please select a product', 'warning');
         return;
       }
-
+ 
       const [productName, price] = product.split('|');
-
+ 
       if (platform === 'amazon') {
         checkout('amazon', productName, price);
       } else if (platform === 'blinkit') {
@@ -2896,7 +2957,7 @@
         openRazorpayModal(productName, price);
       }
     }
-
+ 
     // ===== NEWSLETTER =====
     function handleNewsletter(e) {
       e.preventDefault();
@@ -2904,12 +2965,12 @@
       showToast('✓ Thanks for subscribing! Check your email for updates.');
       e.target.reset();
     }
-
+ 
     // ===== FORM VALIDATION =====
     function validateForm(form) {
       let isValid = true;
       const fields = form.querySelectorAll('input, select, textarea');
-
+ 
       fields.forEach(field => {
         const parent = field.parentElement;
         
@@ -2926,25 +2987,25 @@
           parent.classList.remove('error');
         }
       });
-
+ 
       return isValid;
     }
-
+ 
     function isValidEmail(email) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
-
+ 
     function isValidPhone(phone) {
       return /^[0-9]{10}$/.test(phone.replace(/\D/g, ''));
     }
-
+ 
     // Remove error class when user starts typing
     document.querySelectorAll('input, select, textarea').forEach(field => {
       field.addEventListener('input', () => {
         field.parentElement.classList.remove('error');
       });
     });
-
+ 
     // ===== MODAL CLOSE ON ESCAPE =====
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
@@ -2956,7 +3017,7 @@
         });
       }
     });
-
+ 
     // ===== MODAL CLOSE ON BACKGROUND CLICK =====
     document.querySelectorAll('.modal').forEach(modal => {
       modal.addEventListener('click', (e) => {
@@ -2969,7 +3030,7 @@
         }
       });
     });
-
+ 
     // ===== SMOOTH SCROLLING =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -2980,7 +3041,7 @@
         }
       });
     });
-
+ 
     // ===== PREVENT DOUBLE SUBMISSION =====
     document.querySelectorAll('form').forEach(form => {
       form.addEventListener('submit', function() {
